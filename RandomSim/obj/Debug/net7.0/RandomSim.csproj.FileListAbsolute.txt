@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\RandomSim\RandomSim\bin\Debug\net7.0\RandomSim.exe
+C:\Users\user\source\repos\RandomSim\RandomSim\bin\Debug\net7.0\RandomSim.deps.json
+C:\Users\user\source\repos\RandomSim\RandomSim\bin\Debug\net7.0\RandomSim.runtimeconfig.json
+C:\Users\user\source\repos\RandomSim\RandomSim\bin\Debug\net7.0\RandomSim.dll
+C:\Users\user\source\repos\RandomSim\RandomSim\bin\Debug\net7.0\RandomSim.pdb
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.AssemblyInfo.cs
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.dll
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\refint\RandomSim.dll
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.pdb
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\RandomSim.genruntimeconfig.cache
+C:\Users\user\source\repos\RandomSim\RandomSim\obj\Debug\net7.0\ref\RandomSim.dll
