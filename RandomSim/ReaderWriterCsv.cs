@@ -12,9 +12,9 @@ namespace RandomSim
             var inDatas = new List<T>();
 
             var fields = GetFields<T>()
-                //.Where(x => !x.Contains("<Id>"))
+                .Where(x => !x.Contains("<DegreeOfInfluence>"))
                 .ToList();
-            var fieldsCount = GetFields<T>().Count();
+            var fieldsCount = fields.Count;
 
             using (var reader = new StreamReader(path))
             {
@@ -47,10 +47,10 @@ namespace RandomSim
                     item.GetType()
                         .GetField(fields[i], BindingFlags.Instance | BindingFlags.NonPublic)
                         .SetValue(item, DateTime.Parse(rightData));
-                else if (fields[i].Contains("Id"))
+                else if (fields[i].Contains("DegreeOfInfluence"))
                     item.GetType()
                         .GetField(fields[i], BindingFlags.Instance | BindingFlags.NonPublic)
-                        .SetValue(item, Int32.Parse(rightData));
+                        .SetValue(item, 0.0);
                 else
                     item.GetType()
                         .GetField(fields[i], BindingFlags.Instance | BindingFlags.NonPublic)
