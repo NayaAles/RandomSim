@@ -3,12 +3,16 @@
 Console.WriteLine("\nВведите имя персонажа:\n");
 Console.WriteLine("Имя: ");
 var name = UpperFirstChar(Console.ReadLine()
+    .Split(' ')
+    .First()
     .ToString()
     .Trim()
     .ToLower());
 
 Console.WriteLine("Фамилия: ");
 var surname = UpperFirstChar(Console.ReadLine()
+    .Split(' ')
+    .First()
     .ToString()
     .Trim()
     .ToLower());
