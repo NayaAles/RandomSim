@@ -3,7 +3,7 @@ namespace RandomSim
 {
     public static class CurrentDirectory
     {
-        public static string Get()
+        public static string Get(int numberOfDepth)
         {
             var startDirectory = new DirectoryInfo(Directory.GetCurrentDirectory())
                 .Parent;
@@ -19,7 +19,7 @@ namespace RandomSim
                     startDirectory = startDirectory.Parent;
                 }
             }
-            while (i < 4);
+            while (i < numberOfDepth);
 
             return currentDirectory;
         }

@@ -3,7 +3,7 @@ namespace RandomSim
 {
     public static  class Prediction
     {
-        public static void Get(string currentDirectory, string eventsPath, string adjectivesPath, string fullName)
+        public static string Get(string eventsPath, string adjectivesPath, string fullName)
         {
             var random = new Random();
             var events = RandomPermutaion(ReaderWriterCsv.ReadFromCsv<Event>(eventsPath, ';'))
@@ -22,15 +22,14 @@ namespace RandomSim
             var selectedAdjective = adjectives[random.Next(0, adjectives.Count - 1)];
 
             selectedEvent.DegreeOfInfluence = Math.Round(random.NextDouble() * 100.0, 2);
-            selectedEvent.NumberOfDescendants = random.Next(1, 3);
+            selectedEvent.NumberOfDescendants = random.Next(1, 5);
 
-            string exit = $"\nПолучено предсказание для персонажа: {fullName}\n\n" +
+            var exit = $"\n\nПолучено предсказание для персонажа: {fullName}\n\n" +
                 $"Событие: {selectedEvent.Name}, степень влияния: {selectedEvent.DegreeOfInfluence}%;\n" +
                 $"Случайное прилагательное: {selectedAdjective.RandomAdjective};\n" +
                 $"Количество потомков: {selectedEvent.NumberOfDescendants}";
 
-            Console.WriteLine(exit);
-            File.AppendAllText(currentDirectory + @"/exit.txt", exit);
+            return exit;
         }
 
         private static List<T> RandomPermutaion<T>(List<T> datas)
