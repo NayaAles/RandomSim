@@ -1,37 +1,15 @@
 ﻿using RandomSim;
 
 var name = Name.Get();
-var currentDirectory = CurrentDirectory.Get(4);
-var confirm = ConsoleKey.Z;
 
-if (!String.IsNullOrEmpty(currentDirectory))
+if (!String.IsNullOrEmpty(Prediction.Directory))
 {
-    var eventsPath = currentDirectory + @"\events.csv";
-    var adjectivesPath = currentDirectory + @"\adjectives.csv";
-
-    if (File.Exists(eventsPath) && File.Exists(adjectivesPath))
-    {
-        while (confirm != ConsoleKey.Enter)
-        {
-            var exit = Prediction.Get(eventsPath, adjectivesPath, name);
-            Console.WriteLine(exit);
-
-            Console.WriteLine("\nОставить предсказание? Для подтверждения нажмите <Enter>\n");
-            confirm = Console.ReadKey()
-                .Key;
-
-            if (confirm == ConsoleKey.Enter)
-                File.AppendAllText(currentDirectory + @"\exit.txt", exit);
-        }
-    }
+    if (File.Exists(Prediction.EventsPath) && File.Exists(Prediction.AdjectivesPath))
+        Prediction.Menu(name);
     else
-    {
-        Console.WriteLine($"Error: Программный файл не найден: {eventsPath}.");
-    }
-    
-    
+        Console.WriteLine($"Error: Один из программных файлов не найден");  
 }
 else
 {
-    Console.WriteLine($"Error: Объект текущей директории не существует.");
+    Console.WriteLine($"Error: Объект текущей директории не существует");
 }
