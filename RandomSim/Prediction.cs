@@ -106,12 +106,19 @@ namespace RandomSim
                 var exit = Prediction.Get(name, textToSearch);
                 Console.WriteLine(exit);
 
-                Console.WriteLine("\nОставить предсказание? Для подтверждения нажмите <Enter>\n");
+                Console.WriteLine("\nСохранить предсказание? Для подтверждения нажмите <Enter>\n");
                 confirm = Console.ReadKey()
                     .Key;
 
                 if (confirm == ConsoleKey.Enter)
+                {
                     File.AppendAllText(Directory + @"\exit.txt", exit);
+                }
+                else if (!String.IsNullOrEmpty(textToSearch) && confirm != ConsoleKey.Enter)
+                {
+                    Console.WriteLine("\nВведите текст для поиска:");
+                    textToSearch = Regex.Replace(Console.ReadLine().ToString().ToLower(), @"[^а-я\s]+", string.Empty);
+                }
             }
         }
 
